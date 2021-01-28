@@ -10,7 +10,7 @@
 
 #Project
 - [pytest.ini](pytest.ini) contains markers that can be used to run separate tests: **-m bug_1**
-- [test_api.py](test_customer_app.py) file with tests
+- [test_api.py](test_api.py) file with tests
 - [README.md](README.md) the file you are reading now
 
 
