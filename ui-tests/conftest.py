@@ -24,14 +24,14 @@ def take_screenshot(browser, test_name):
     browser.save_screenshot(file_name)
 
 
-@pytest.hookimpl(hookwrapper=True)
-def pytest_runtest_makereport(item, call):
-    pytest_html = item.config.pluginmanager.getplugin("html")
-    outcome = yield
-    report = outcome.get_result()
-    extra = getattr(report, "extra", [])
-    if report.when == "call":
-        browser = item.funcargs['browser']
-        screenshot = browser.get_screenshot_as_base64()
-        extra.append(pytest_html.extras.image(screenshot, ''))
-    report.extra = extra
+# @pytest.hookimpl(hookwrapper=True)
+# def pytest_runtest_makereport(item, call):
+#     pytest_html = item.config.pluginmanager.getplugin("html")
+#     outcome = yield
+#     report = outcome.get_result()
+#     extra = getattr(report, "extra", [])
+#     if report.when == "call":
+#         browser = item.funcargs['browser']
+#         screenshot = browser.get_screenshot_as_base64()
+#         extra.append(pytest_html.extras.image(screenshot, ''))
+#     report.extra = extra
